@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+🧾 Expense Tracker Web App
+A modern, visually appealing expense tracker built with React, Firebase, and TailwindCSS, featuring Framer Motion animations and budget alerts. Keep track of your income, expenses, and visualize your spending with charts. Export your transaction history as CSV or PDF.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🚀 Features
+Add Income & Expenses with category, description, and date
+Real-time balance & budget tracking
+Budget alerts when expenses exceed set limits
+Sad animation for expenses & celebration animation for income using Framer Motion
+Visual Expense Chart to analyze spending
+Export Transactions to CSV or PDF
+Premium UI with glassmorphism, gradients, shadows, hover effects
+Responsive Design for all screen sizes
+📁 Project Structure
+ExpenseTrackerWebApp/
+│
+├── public/
+│   └── index.html          ← Main HTML file
+├── src/
+│   ├── components/
+│   │   ├── AddTransaction.js
+│   │   ├── Dashboard.js
+│   │   ├── ExpenseChart.js
+│   │   ├── Footer.js
+│   │   ├── Login.js
+│   │   ├── Navbar.js
+│   │   ├── Signup.js
+│   │   └── TransactionList.js
+│   ├── firebase.js         ← Firebase config & initialization
+│   ├── App.js
+│   ├── index.js
+│   └── style.css
+├── package.json
+├── README.md
+└── .gitignore
+⚡ Technologies Used
+React.js – Frontend library
+TailwindCSS – Styling and responsive design
+Firebase Firestore – Backend database
+React Toastify – Notifications
+Framer Motion – Smooth animations
+Chart.js – Expense chart visualization
+jsPDF & PapaParse – Export transactions as PDF & CSV
+🛠 Installation
+Clone the repository:
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
+Install dependencies:
+npm install
+Configure Firebase:
 
-## Available Scripts
+Create a project on Firebase
+Copy your Firebase config to src/firebase.js
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
-In the project directory, you can run:
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+export const auth = getAuth(app);
+Start the development server:
+npm start
+📈 Usage
+Add your income and expenses
+Set your monthly budget
+View live balance and expense charts
+Export transaction history as CSV or PDF
+Enjoy animations when adding income or overspending
+📂 Future Improvements
+Monthly summary & reports
+Dark mode toggle
+Mobile app version
+Lottie animations folder for more advanced effects
+📝 License
+This project is open-source and free to use under the MIT License.
