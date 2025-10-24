@@ -24,6 +24,7 @@ ChartJS.register(
 );
 
 const ExpenseChart = ({ transactions }) => {
+  console.log("🔥 Transactions received in ExpenseChart:", transactions);
   const totalIncome = transactions
     .filter((t) => t.type === "income")
     .reduce((sum, t) => sum + t.amount, 0);
